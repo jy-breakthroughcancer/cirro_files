@@ -16,12 +16,12 @@
         "normal_bais": {
           "type": "string",
           "title": "List of BAI files",
-          "default": "This list must correspond to normal_bams. For example, 'Sample1.bai, Sample2.bai'"
+          "description": "This list must correspond to normal_bams. For example, 'Sample1.bai, Sample2.bai'"
         },
         "normal_bams": {
           "type": "string",
           "title": "List of BAM files",
-          "default": "This list must correspond to normal_bais. For example, 'Sample1.bam, Sample2.bam'"
+          "description": "This list must correspond to normal_bais. For example, 'Sample1.bam, Sample2.bam'"
         },
         "pon_entity_id": {
           "type": "string",
