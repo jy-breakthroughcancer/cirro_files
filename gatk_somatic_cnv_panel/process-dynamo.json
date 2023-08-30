@@ -1,0 +1,44 @@
+{
+  "id": "process-gatk-somatic-cnv_panel-4_4_0_0",
+  "childProcessIds": [
+    "ingest_unaligned_bam"
+  ],
+  "name": "Somatic Copy Number Variation Panel (GATK)",
+  "desc": "creates a panel of normals (PON).",
+  "executor": "CROMWELL",
+  "documentationUrl": "https://gatk.broadinstitute.org/hc/en-us/articles/360035535892-Somatic-copy-number-variant-discovery-CNVs-",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "cnv_somatic_panel_workflow.wdl",
+    "uri": "broadinstitute/gatk/scripts/cnv_wdl/somatic",
+    "version": "master"
+  },
+  "paramDefaults": [],
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+  "fileJson": "",
+  "componentJson": "",
+  "infoJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "fileMappingRules": [
+    {
+      "description": "Unmapped BAM",
+      "min": 1,
+      "fileNamePatterns": [
+        {
+          "exampleName": "SampleName.unmapped.bam",
+          "description": "BAM",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).unmapped.bam"
+        }
+      ]
+    }
+  ]
+}
