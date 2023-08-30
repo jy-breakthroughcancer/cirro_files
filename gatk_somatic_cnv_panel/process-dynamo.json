@@ -1,5 +1,5 @@
 {
-  "id": "process-gatk-somatic-cnv_panel-4_4_0_0",
+  "id": "process-gatk-somatic-cnv-panel-4_4_0_0",
   "childProcessIds": [
     "ingest_unaligned_bam"
   ],
