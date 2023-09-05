@@ -1,9 +1,9 @@
 {
-  "id": "process-gatk-somatic-cnv-panel-4_4_0_0",
+  "id": "process-gatk-somatic-cnv-panel-jen-test",
   "parentDatasetIds": ["process-nf-core-sarek-align-3-2",
                       "ingest_unaligned_bam"],
-  "name": "Somatic Copy Number Variation Panel (GATK)",
-  "desc": "creates a panel of normals (PON).",
+  "name": "Somatic Copy Number Variation Panel (GATK) TEST",
+  "desc": "creates a panel of normals (PON) test.",
   "executor": "CROMWELL",
   "documentationUrl": "https://gatk.broadinstitute.org/hc/en-us/articles/360035535892-Somatic-copy-number-variant-discovery-CNVs-",
   "code": {
