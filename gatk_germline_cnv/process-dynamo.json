@@ -29,13 +29,13 @@
   "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
   "fileMappingRules": [
     {
-      "description": "Aligned Reads",
-      "min": 2,
+      "description": "Unmapped BAM",
+      "min": 1,
       "fileNamePatterns": [
         {
-          "exampleName": "preprocessing/mapped/SampleName.bam",
-          "description": "Aligned reads (BAM)",
-          "sampleMatchingPattern": "preprocessing/mapped/(?P<sampleName>[\\S ]*)/.*\\.bam"
+          "exampleName": "SampleName.unmapped.bam",
+          "description": "BAM",
+          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).unmapped.bam"
         }
       ]
     }
