@@ -1,0 +1,43 @@
+{
+  "id": "process-gatk-somatic-cnv-panel-jen-test",
+  "parentDatasetIds": ["process-nf-core-sarek-align-3-2",
+                      "ingest_unaligned_bam"],
+  "name": "Somatic Copy Number Variation Panel (GATK) TEST",
+  "desc": "creates a panel of normals (PON) test.",
+  "executor": "CROMWELL",
+  "documentationUrl": "https://gatk.broadinstitute.org/hc/en-us/articles/360042477812-GermlineCNVCaller",
+  "code": {
+    "repository": "GITHUBPUBLIC",
+    "script": "cnv_germline_case_workflow.wdl",
+    "uri": "broadinstitute/gatk/scripts/cnv_wdl/germline",
+    "version": "master",
+  },
+  "paramDefaults": [],
+  "computeDefaults": [
+    {
+      "executor": "NEXTFLOW",
+      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
+      "name": "Default"
+    }
+  ],
+  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
+  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
+  "fileJson": "",
+  "componentJson": "",
+  "infoJson": "",
+  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
+  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
+  "fileMappingRules": [
+    {
+      "description": "Aligned Reads",
+      "min": 2,
+      "fileNamePatterns": [
+        {
+          "exampleName": "preprocessing/mapped/SampleName.bam",
+          "description": "Aligned reads (BAM)",
+          "sampleMatchingPattern": "preprocessing/mapped/(?P<sampleName>[\\S ]*)/.*\\.bam"
+        }
+      ]
+    }
+  ]
+}

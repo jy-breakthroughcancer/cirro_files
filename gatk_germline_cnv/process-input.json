@@ -1,0 +1,13 @@
+{
+    "CNVSomaticPanelWorkflow.gatk_docker": "$.params.dataset.paramJson.gatk_docker",
+    "CNVSomaticPanelWorkflow.intervals": "$.params.dataset.paramJson.intervals",
+    "CNVSomaticPanelWorkflow.normal_bais": "$.params.dataset.paramJson.normal_bais",
+    "CNVSomaticPanelWorkflow.normal_bams": "$.params.dataset.paramJson.normal_bams",
+    "CNVSomaticPanelWorkflow.pon_entity_id": "$.params.dataset.paramJson.pon_entity_id",
+    "CNVSomaticPanelWorkflow.ref_fasta_dict": "$.params.dataset.paramJson.ref_fasta_dict",
+    "CNVSomaticPanelWorkflow.ref_fasta_fai": "$.params.dataset.paramJson.ref_fasta_fai",
+    "CNVSomaticPanelWorkflow.ref_fasta": "$.params.dataset.paramJson.ref_fasta",
+    "CNVSomaticPanelWorkflow.do_explicit_gc_correction": "$.params.dataset.paramJson.do_explicit_gc_correction",
+    "CNVSomaticPanelWorkflow.PreprocessIntervals.bin_length": "$.params.dataset.paramJson.bin_length",
+    "CNVSomaticPanelWorkflow.PreprocessIntervals.padding": "$.params.dataset.paramJson.padding"
+  }
