@@ -5,8 +5,8 @@
     "childProcessIds": [],
     "code": {
         "repository": "GITHUBPUBLIC",
-        "script": "cnv_germline_cohort_workflow.wdl",
-        "uri": "broadinstitute/gatk/scripts/cnv_wdl/germline",
+        "script": "scripts/cnv_wdl/germline/cnv_germline_cohort_workflow.wdl",
+        "uri": "broadinstitute/gatk",
         "version": "master"
     },
     "desc": "TEST Description of mGATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
