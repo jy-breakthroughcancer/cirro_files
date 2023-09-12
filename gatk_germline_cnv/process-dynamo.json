@@ -1,7 +1,7 @@
 {
     "id": "process-gatk-cnv_germline_cohort-4_4_0_0_jen",
     "name": "Germline Variant Discovery (GATK) CNV Germline Cohort",
-    "parentProcessIds": []
+    "parentProcessIds": [],
     "childProcessIds": [],
     "code": {
         "repository": "GITHUBPUBLIC",
@@ -11,5 +11,5 @@
     },
     "desc": "TEST Description of mGATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
     "documentationUrl": "",
-    "executor": "CROMWELL",
+    "executor": "CROMWELL"
 }
