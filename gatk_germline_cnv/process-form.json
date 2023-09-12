@@ -1,0 +1,37 @@
+{
+    "form": {
+        "properties": {
+            "CNVGermlineCohortWorkflow": {
+                "properties": {
+                    "cohort_entity_id": {
+                        "default": "cohort_entity_id",
+                        "description": "name for the control cohort",
+                        "title": "cohort_entity_id",
+                        "type": "string"
+                    },
+                    "contig_ploidy_priors": {
+                        "default": "contig_ploidy_priors",
+                        "description": "priors for the contig ploidy",
+                        "title": "contig_ploidy_priors",
+                        "type": "string"
+                    },
+                    "intervals": {
+                        "default": "intervals",
+                        "description": "Genomic intervals to call",
+                        "file": "**/interval_lists/**/targets.interval_list",
+                        "pathType": "references",
+                        "title": "intervals",
+                        "type": "string"
+                    },
+                    "num_intervals_per_scatter": {
+                        "default": 20,
+                        "title": "num_intervals_per_scatter",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "ui": {}
+}
