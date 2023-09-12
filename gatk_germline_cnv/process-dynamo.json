@@ -6,7 +6,7 @@
     "code": {
         "repository": "GITHUBPUBLIC",
         "script": "cnv_germline_cohort_workflow.wdl",
-        "uri": "break-through-cancer/gatk/blob/master/scripts/cnv_wdl/germline",
+        "uri": "broadinstitute/gatk/scripts/cnv_wdl/germline",
         "version": "master"
     },
     "desc": "TEST Description of mGATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
