@@ -1,60 +1,37 @@
 {
     "form": {
-      "type": "object",
-      "title": "Sample Information",
-      "properties": {
-        "gatk_docker": {
-          "type": "string",
-          "title": "GATK Docker image",
-          "default": "broadinstitute/gatk:latest"
-        },
-        "intervals": {
-          "type": "string",
-          "title": "Intervals",
-          "description": "Picard or GATK-style interval list. For WGS, this should typically only include the autosomal chromosomes."
-        },
-        "normal_bais": {
-          "type": "string",
-          "title": "List of BAI files",
-          "description": "This list must correspond to normal_bams. For example, 'Sample1.bai, Sample2.bai'"
-        },
-        "normal_bams": {
-          "type": "string",
-          "title": "List of BAM files",
-          "description": "This list must correspond to normal_bais. For example, 'Sample1.bam, Sample2.bam'"
-        },
-        "pon_entity_id": {
-          "type": "string",
-          "title": "Name of the final PoN file"
-        },
-        "ref_fasta_dict": {
-          "type": "string",
-          "title": "Path to reference dict file"
-        },
-        "ref_fasta_fai": {
-          "type": "string",
-          "title": "Path to reference fasta fai file"
-        },
-        "ref_fasta": {
-          "type": "string",
-          "title": "Path to reference fasta file"
-        },
-        "do_explicit_gc_correction": {
-            "type": "boolean",
-            "title": "Do Explicit GC Correction",
-            "description": "If true, perform explicit GC-bias correction when creating PoN and in subsequent denoising of case samples. If false, rely on PCA-based denoising to correct for GC bias."
-        },
-        "bin_length": {
-            "type": "integer",
-            "title": "Bin Length",
-            "description": "Size of bins (in bp) for coverage collection. Typically, this is set to 0 for capture samples. This must be the same value used for all case samples."
-        },
-        "padding": {
-            "type": "integer",
-            "title": "Padding",
-            "description": "Amount of padding (in bp) to add to both sides of targets for WES coverage collection. This must be the same value used for all case samples."
+        "properties": {
+            "CNVGermlineCohortWorkflow": {
+                "properties": {
+                    "cohort_entity_id": {
+                        "default": "cohort_entity_id",
+                        "description": "name for the control cohort",
+                        "title": "cohort_entity_id",
+                        "type": "string"
+                    },
+                    "contig_ploidy_priors": {
+                        "default": "contig_ploidy_priors",
+                        "description": "priors for the contig ploidy",
+                        "title": "contig_ploidy_priors",
+                        "type": "string"
+                    },
+                    "intervals": {
+                        "default": "intervals",
+                        "description": "Genomic intervals to call",
+                        "file": "**/interval_lists/**/targets.interval_list",
+                        "pathType": "references",
+                        "title": "intervals",
+                        "type": "string"
+                    },
+                    "num_intervals_per_scatter": {
+                        "default": 20,
+                        "title": "num_intervals_per_scatter",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
         }
-      }
     },
     "ui": {}
-  }
+}
