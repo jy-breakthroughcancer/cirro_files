@@ -23,7 +23,6 @@ def setup_inputs(ds: PreprocessDataset):
         "normal_bams"
     ).replace(' ', '').split(',')
 
-    ds.logger.info("******* ds.params setup_input *******")
     ds.logger.info(ds.params)
 
 def setup_options(ds: PreprocessDataset):
