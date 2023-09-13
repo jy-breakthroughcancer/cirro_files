@@ -23,7 +23,7 @@ def setup_inputs(ds: PreprocessDataset):
         "normal_bams"
     ).replace(' ', '').split(',')
 
-  ds.logger.info("******* ds.params *******")
+  ds.logger.info("******* ds.params setup_input *******")
   ds.logger.info(ds.params)
 
 def setup_options(ds: PreprocessDataset):
@@ -53,6 +53,8 @@ def setup_options(ds: PreprocessDataset):
 if __name__ == "__main__":
     ds = PreprocessDataset.from_running()
     json.dump(ds.params, open('inputs.0.json', 'w'))
+    ds.logger.info("******* ds.params main *******")
+    ds.logger.info(ds.params)
     setup_inputs(ds)
     setup_options(ds)
 
