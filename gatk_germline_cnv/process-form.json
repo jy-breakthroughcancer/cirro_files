@@ -16,14 +16,12 @@
                         "type": "string"
                     },
                     "bam_files": {
-                        "type": "string",
+                        "description": "This list must correspond to bai files. For example, 'Sample1.bam, Sample2.bam'",
+                        "file": "**/preprocessing/recalibrated/**/*.cram",
+                        "multiple": true,
+                        "pathType": "dataset",
                         "title": "BAM files",
-                        "description": "The BAM files should be corresponding to BAI files"
-                    },
-                    "bai_files": {
-                        "type": "string",
-                        "title": "BAI files",
-                        "description": "The BAI files should be corresponding to BAM files"
+                        "type": "string"
                     },
                     "intervals": {
                         "default": "intervals",

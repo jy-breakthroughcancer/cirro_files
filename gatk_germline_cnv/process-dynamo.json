@@ -11,34 +11,5 @@
     },
     "desc": "TEST Description of mGATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
     "documentationUrl": "",
-    "executor": "CROMWELL",
-  "paramDefaults": [],
-  "computeDefaults": [
-    {
-      "executor": "NEXTFLOW",
-      "json": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-compute.config",
-      "name": "Default"
-    }
-  ],
-  "paramMapJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-input.json",
-  "formJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-form.json",
-  "fileJson": "",
-  "componentJson": "",
-  "infoJson": "",
-  "webOptimizationJson": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/process-output.json",
-  "preProcessScript": "s3://<RESOURCES_BUCKET>/<PROCESS_DIRECTORY>/preprocess.py",
-  "fileMappingRules": [
-    {
-      "description": "Unmapped BAM",
-      "min": 1,
-      "fileNamePatterns": [
-        {
-          "exampleName": "SampleName.unmapped.bam",
-          "description": "BAM",
-          "sampleMatchingPattern": "(?P<sampleName>[\\S ]*).unmapped.bam"
-        }
-      ]
-    }
-  ]
+    "executor": "CROMWELL"
 }
-
