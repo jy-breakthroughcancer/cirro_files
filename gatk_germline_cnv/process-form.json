@@ -15,6 +15,16 @@
                         "title": "contig_ploidy_priors",
                         "type": "string"
                     },
+                    "bam_files": {
+                        "type": "string",
+                        "title": "BAM files",
+                        "description": "The BAM files should be corresponding to BAI files"
+                    },
+                    "bai_files": {
+                        "type": "string",
+                        "title": "BAI files",
+                        "description": "The BAI files should be corresponding to BAM files"
+                    },
                     "intervals": {
                         "default": "intervals",
                         "description": "Genomic intervals to call",

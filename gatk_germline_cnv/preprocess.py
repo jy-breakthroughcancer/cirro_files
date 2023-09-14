@@ -4,26 +4,49 @@ import json
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 from cirro.api.models.s3_path import S3Path
 
+def mark_filetype(fp: str) -> str:
+    if fp.endswith(".bam"):
+        return "bam"
+    elif fp.endswith(".bai"):
+        return "bai"
+    else:
+        return "other"
 
 def setup_inputs(ds: PreprocessDataset):
- 
-    # turn comma separated string of normal_bais into list
+    # turn comma separated string of bam_files into list
     ds.params[
-        "CNVSomaticPanelWorkflow.normal_bais"
+        "CNVGermlineCohortWorkflow.bam_files"
     ] = ds.params.get(
-        "CNVSomaticPanelWorkflow.normal_bais",
-        "normal_bais"
-    ).replace(' ', '').split(',')
+        "CNVGermlineCohortWorkflow.bam_files",
+        "bam_files"
+    ).split(',')
 
-    # turn comma separated string of normal_bams into list
+    # turn comma separated string of normal_bais into list with .bai suffix
     ds.params[
-        "CNVSomaticPanelWorkflow.normal_bams"
-    ] = ds.params.get(
-        "CNVSomaticPanelWorkflow.normal_bams",
-        "normal_bams"
-    ).replace(' ', '').split(',')
+        "CNVGermlineCohortWorkflow.bai_files"
+    ] = [x + ".crai" for x in ds.params.get(
+        "CNVGermlineCohortWorkflow.bai_files",
+        "bai_files"
+    ).split(',')]
 
-    ds.logger.info(ds.params)
+    all_inputs = {
+                kw: val
+                for kw, val in ds.params.items()
+                if kw.startswith("CNVGermlineCohortWorkflow")
+            }
+
+    # Write out the complete set of inputs
+    write_json("inputs.json", all_inputs)
+
+    # Write out each individual file pair
+    write_json(f"inputs.0.json", all_inputs)
+
+
+def write_json(fp, obj, indent=4) -> None:
+
+    with open(fp, "wt") as handle:
+        json.dump(obj, handle, indent=indent)
+
 
 def setup_options(ds: PreprocessDataset):
 
@@ -41,7 +64,7 @@ def setup_options(ds: PreprocessDataset):
     options = {
         kw: val
         for kw, val in ds.params.items()
-        if not kw.startswith("ConvertPairedFastQsToUnmappedBamWf")
+        if not kw.startswith("CNVGermlineCohortWorkflow")
     }
 
     # Write out
@@ -51,9 +74,6 @@ def setup_options(ds: PreprocessDataset):
 
 if __name__ == "__main__":
     ds = PreprocessDataset.from_running()
-    json.dump(ds.params, open('inputs.0.json', 'w'))
-    ds.logger.info("******* ds.params main *******")
-    ds.logger.info(ds.params)
     setup_inputs(ds)
     setup_options(ds)
 
