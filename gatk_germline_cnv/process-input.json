@@ -1,14 +1,14 @@
 {
     "CNVGermlineCohortWorkflow.cohort_entity_id": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.cohort_entity_id",
     "CNVGermlineCohortWorkflow.contig_ploidy_priors": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.contig_ploidy_priors",
-    "CNVGermlineCohortWorkflow.gatk_docker": "us.gcr.io/broad-gatk/gatk:4.4.0.0",
-    "CNVGermlineCohortWorkflow.bam_files": "$.params.dataset.paramJson.bam_files",
-    "CNVGermlineCohortWorkflow.bai_files": "$.params.dataset.paramJson.bam_files",
+    "CNVGermlineCohortWorkflow.gatk_docker": "us.gcr.io/broad-gatk/gatk:latest",
     "CNVGermlineCohortWorkflow.intervals": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.intervals",
+    "CNVGermlineCohortWorkflow.normal_bais": "$.params.dataset.paramJson.bam_files",
+    "CNVGermlineCohortWorkflow.normal_bams": "$.params.dataset.paramJson.bam_files",
     "CNVGermlineCohortWorkflow.num_intervals_per_scatter": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.num_intervals_per_scatter",
-    "CNVGermlineCohortWorkflow.ref_fasta": "s3://pubweb-references/GATK/hg38/v0/Homo_sapiens_assembly38.fasta",
     "CNVGermlineCohortWorkflow.ref_fasta_dict": "s3://pubweb-references/GATK/hg38/v0/Homo_sapiens_assembly38.dict",
     "CNVGermlineCohortWorkflow.ref_fasta_fai": "s3://pubweb-references/GATK/hg38/v0/Homo_sapiens_assembly38.fasta.fai",
+    "CNVGermlineCohortWorkflow.ref_fasta": "s3://pubweb-references/GATK/hg38/v0/Homo_sapiens_assembly38.fasta",
     "final_call_logs_dir": "$.params.dataset.s3|/logs/",
     "final_workflow_outputs_dir": "$.params.dataset.s3|/data/"
 }

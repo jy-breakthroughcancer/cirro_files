@@ -15,17 +15,17 @@ def mark_filetype(fp: str) -> str:
 def setup_inputs(ds: PreprocessDataset):
     # turn comma separated string of bam_files into list
     ds.params[
-        "CNVGermlineCohortWorkflow.bam_files"
+        "CNVGermlineCohortWorkflow.normal_bams"
     ] = ds.params.get(
-        "CNVGermlineCohortWorkflow.bam_files",
+        "CNVGermlineCohortWorkflow.normal_bams",
         "bam_files"
     ).split(',')
 
     # turn comma separated string of normal_bais into list with .bai suffix
     ds.params[
-        "CNVGermlineCohortWorkflow.bai_files"
+        "CNVGermlineCohortWorkflow.normal_bams"
     ] = [x + ".crai" for x in ds.params.get(
-        "CNVGermlineCohortWorkflow.bai_files",
+        "CNVGermlineCohortWorkflow.normal_bams",
         "bai_files"
     ).split(',')]
 

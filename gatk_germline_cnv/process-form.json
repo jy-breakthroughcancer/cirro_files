@@ -15,7 +15,7 @@
                         "title": "contig_ploidy_priors",
                         "type": "string"
                     },
-                    "bam_files": {
+                    "normal_bams": {
                         "description": "This list must correspond to bai files. For example, 'Sample1.bam, Sample2.bam'",
                         "file": "**/preprocessing/recalibrated/**/*.cram",
                         "multiple": true,
@@ -35,7 +35,22 @@
                         "default": 20,
                         "title": "num_intervals_per_scatter",
                         "type": "integer"
-                    }
+                    },
+                    "maximum_number_events_per_sample": {
+                        "default": 100,
+                        "title": "maximum_number_events_per_sample",
+                        "type": "integer"
+                    },
+                    "maximum_number_pass_events_per_sample": {
+                        "default": 10,
+                        "title": "maximum_number_pass_events_per_sample",
+                        "type": "integer"
+                    },
+                    "ref_copy_number_autosomal_contigs": {
+                        "default": 2,
+                        "title": "ref_copy_number_autosomal_contigs",
+                        "type": "integer"
+                    },
                 },
                 "type": "object"
             }
