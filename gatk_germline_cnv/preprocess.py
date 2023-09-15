@@ -4,13 +4,6 @@ import json
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 from cirro.api.models.s3_path import S3Path
 
-def mark_filetype(fp: str) -> str:
-    if fp.endswith(".bam"):
-        return "bam"
-    elif fp.endswith(".bai"):
-        return "bai"
-    else:
-        return "other"
 
 def setup_inputs(ds: PreprocessDataset):
     # turn comma separated string of bam_files into list
@@ -21,11 +14,6 @@ def setup_inputs(ds: PreprocessDataset):
         "normal_bams"
     ).split(',')
 
-    ds.logger.info("Display normal_bams")
-    ds.logger.info(ds.params.get(
-        "CNVGermlineCohortWorkflow.normal_bams",
-        "normal_bams"
-    ))
 
     # turn comma separated string of normal_bais into list with .bai suffix
     ds.params[
@@ -34,12 +22,6 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bams",
         "normal_bams"
     )]
-
-    ds.logger.info("Display normal_bais")
-    ds.logger.info(ds.params.get(
-        "CNVGermlineCohortWorkflow.normal_bais",
-        "normal_bais"
-    ))
 
     all_inputs = {
                 kw: val
