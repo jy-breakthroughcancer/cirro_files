@@ -1,5 +1,5 @@
 {
-    "id": "process-gatk-cnv_germline_cohort-4_4_0_0_jen",
+    "id": "process-gatk-cnv_germline_cohort-4_4_0_0_jen1",
     "name": "Germline Variant Discovery (GATK) CNV Germline Cohort",
     "parentProcessIds": ["process-nf-core-sarek-align-3-2", "ingest_unaligned_bam"],
     "childProcessIds": [],
@@ -9,7 +9,7 @@
         "uri": "broadinstitute/gatk",
         "version": "master"
     },
-    "desc": "TEST Description of mGATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
+    "desc": "GATK CNV Germline Cohort to generate Panel of Normals (GATK/gatk4-cnv-germline-cnv_germline_cohort)y workflow",
     "documentationUrl": "",
     "executor": "CROMWELL"
 }
