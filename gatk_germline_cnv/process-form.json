@@ -55,7 +55,7 @@
                         "default": 2,
                         "title": "ref_copy_number_autosomal_contigs",
                         "type": "integer"
-                    },
+                    }
                 },
                 "type": "object"
             }
