@@ -28,14 +28,6 @@
                         "title": "BAM files",
                         "type": "string"
                     },
-                    "normal_bais": {
-                        "description": "This list must correspond to bai files. For example, 'Sample1.bam, Sample2.bam'",
-                        "file": "**/preprocessing/recalibrated/**/*.cram.crai",
-                        "multiple": true,
-                        "pathType": "dataset",
-                        "title": "BAI files",
-                        "type": "string"
-                    },
                     "intervals": {
                         "default": "intervals",
                         "description": "Genomic intervals to call",
