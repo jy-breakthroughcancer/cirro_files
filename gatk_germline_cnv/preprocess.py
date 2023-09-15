@@ -34,6 +34,8 @@ def setup_inputs(ds: PreprocessDataset):
                 for kw, val in ds.params.items()
                 if kw.startswith("CNVGermlineCohortWorkflow")
             }
+    ds.logger("Display all_inputs")
+    ds.logger(all_inputs)
 
     # Write out the complete set of inputs
     write_json("inputs.json", all_inputs)
