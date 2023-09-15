@@ -1,7 +1,6 @@
 {
     "CNVGermlineCohortWorkflow.cohort_entity_id": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.cohort_entity_id",
     "CNVGermlineCohortWorkflow.contig_ploidy_priors": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.contig_ploidy_priors",
-    "CNVGermlineCohortWorkflow.gatk_docker": "us.gcr.io/broad-gatk/gatk:latest",
     "CNVGermlineCohortWorkflow.intervals": "$.params.dataset.paramJson.CNVGermlineCohortWorkflow.intervals",
     "CNVGermlineCohortWorkflow.normal_bais": "$.params.dataset.paramJson.bam_files",
     "CNVGermlineCohortWorkflow.normal_bams": "$.params.dataset.paramJson.bam_files",

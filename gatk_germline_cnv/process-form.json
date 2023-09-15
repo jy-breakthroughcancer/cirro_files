@@ -15,6 +15,11 @@
                         "title": "contig_ploidy_priors",
                         "type": "string"
                     },
+                    "gatk_docker": {
+                        "type": "string",
+                        "title": "GATK Docker image",
+                        "default": "broadinstitute/gatk:latest"
+                    },
                     "normal_bams": {
                         "description": "This list must correspond to bai files. For example, 'Sample1.bam, Sample2.bam'",
                         "file": "**/preprocessing/recalibrated/**/*.cram",
