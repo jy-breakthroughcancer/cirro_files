@@ -55,12 +55,12 @@
                         "type": "integer"
                     },
                     "maximum_number_pass_events_per_sample": {
-                        "default": 10,
+                        "default": 100,
                         "title": "maximum_number_pass_events_per_sample",
                         "type": "integer"
                     },
                     "ref_copy_number_autosomal_contigs": {
-                        "default": 2,
+                        "default": 22,
                         "title": "ref_copy_number_autosomal_contigs",
                         "type": "integer"
                     }
