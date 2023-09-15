@@ -15,8 +15,7 @@ def setup_inputs(ds: PreprocessDataset):
         "normal_bams"
     ).split(',')
 
-
-    # turn comma separated string of normal_bais into list with .bai suffix
+    # Turn comma separated string of normal_bais into list with .bai suffix
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bais"
     ] = [bam + ".crai" for bam in ds.params.get(
