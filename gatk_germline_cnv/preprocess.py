@@ -6,6 +6,7 @@ from cirro.api.models.s3_path import S3Path
 
 
 def setup_inputs(ds: PreprocessDataset):
+    """
     # turn comma separated string of bam_files into list
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
@@ -22,7 +23,8 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bams",
         "normal_bams"
     )]
-
+    """
+    
     all_inputs = {
                 kw: val
                 for kw, val in ds.params.items()
