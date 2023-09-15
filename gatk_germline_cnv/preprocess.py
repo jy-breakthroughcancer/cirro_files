@@ -21,6 +21,12 @@ def setup_inputs(ds: PreprocessDataset):
         "normal_bams"
     ).split(',')
 
+    ds.logger.info("Display normal_bams")
+    ds.logger.info(ds.params.get(
+        "CNVGermlineCohortWorkflow.normal_bams",
+        "normal_bams"
+    ))
+
     # turn comma separated string of normal_bais into list with .bai suffix
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bais"
@@ -28,6 +34,12 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bams",
         "normal_bams"
     )]
+
+    ds.logger.info("Display normal_bais")
+    ds.logger.info(ds.params.get(
+        "CNVGermlineCohortWorkflow.normal_bais",
+        "normal_bais"
+    ))
 
     all_inputs = {
                 kw: val
