@@ -4,11 +4,40 @@ import json
 from cirro.helpers.preprocess_dataset import PreprocessDataset
 from cirro.api.models.s3_path import S3Path
 
+def mark_filetype(fp: str) -> str:
+    if fp.endswith(".bam"):
+        return "bam"
+    elif fp.endswith(".bai"):
+        return "bai"
+    else:
+        return "other"
 
 def setup_inputs(ds: PreprocessDataset):
     ds.logger.info("List input files")
     ds.logger.info(ds.files)
-    
+
+    for sample, files in ds.files.groupby("sample"):
+
+        file_dict = {
+            mark_filetype(fp): fp
+            for fp in files['file'].values
+        }
+
+        bam_fp = file_dict.get("bam")
+        bai_fp = file_dict.get("bai")
+
+        ds.logger.info(f"Sample: {sample}")
+        if bam_fp is None:
+            ds.logger.info("No BAM file found, skipping")
+            continue
+        ds.logger.info(f"BAM: {bam_fp}")
+
+        if bai_fp is None:
+            ds.logger.info("No BAM Index file found, skipping")
+            continue
+        ds.logger.info(f"BAM: {bai_fp}")
+
+    """
     # turn comma separated string of bam_files into list
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
@@ -24,7 +53,7 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bais",
         "normal_bais"
     ).split(',')]
-    
+    """
     all_inputs = {
                 kw: val
                 for kw, val in ds.params.items()
@@ -73,6 +102,6 @@ def setup_options(ds: PreprocessDataset):
 if __name__ == "__main__":
     ds = PreprocessDataset.from_running()
     setup_inputs(ds)
-    setup_options(ds)
+    # setup_options(ds)
 
 
