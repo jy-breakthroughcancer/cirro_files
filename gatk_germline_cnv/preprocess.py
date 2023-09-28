@@ -13,46 +13,25 @@ def mark_filetype(fp: str) -> str:
         return "other"
 
 def setup_inputs(ds: PreprocessDataset):
-    ds.logger.info("List input files")
-    ds.logger.info(ds.files)
-    """
-    for sample, files in ds.files.groupby("sample"):
 
-        file_dict = {
-            mark_filetype(fp): fp
-            for fp in files['file'].values
-        }
+    # Raise an error if the parameter has NOT been supplied by the user
+    msg = "User did not specify CNVGermlineCohortWorkflow.normal_bams"
+    assert "CNVGermlineCohortWorkflow.normal_bams" in ds.params, msg
 
-        bam_fp = file_dict.get("bam")
-        bai_fp = file_dict.get("bai")
-
-        ds.logger.info(f"Sample: {sample}")
-        if bam_fp is None:
-            ds.logger.info("No BAM file found, skipping")
-            continue
-        ds.logger.info(f"BAM: {bam_fp}")
-
-        if bai_fp is None:
-            ds.logger.info("No BAM Index file found, skipping")
-            continue
-        ds.logger.info(f"BAM: {bai_fp}")
-
-    """
     # turn comma separated string of bam_files into list
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
-    ] = ds.params.get(
-        "CNVGermlineCohortWorkflow.normal_bams",
-        "normal_bams"
-    ).split(',')
+    ] = ds.params[
+        "CNVGermlineCohortWorkflow.normal_bams"
+    ].split(',')
 
-    # Turn comma separated string of normal_bais into list with .bai suffix
+    # Just add the .crai suffix to the BAMs
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bais"
-    ] = [bam + ".crai" for bam in ds.params.get(
-        "CNVGermlineCohortWorkflow.normal_bais",
-        "normal_bais"
-    ).split(',')]
+    ] = [
+        bam + ".crai"
+        for bam in ds.params["CNVGermlineCohortWorkflow.normal_bams"]
+    ]
     
     all_inputs = {
                 kw: val
