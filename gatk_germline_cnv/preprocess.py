@@ -102,6 +102,6 @@ def setup_options(ds: PreprocessDataset):
 if __name__ == "__main__":
     ds = PreprocessDataset.from_running()
     setup_inputs(ds)
-    # setup_options(ds)
+    setup_options(ds)
 
 
