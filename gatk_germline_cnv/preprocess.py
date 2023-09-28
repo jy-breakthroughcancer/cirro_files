@@ -24,9 +24,9 @@ def setup_inputs(ds: PreprocessDataset):
     # turn comma separated string of bam_files into list
     
     ds.params[
-        "CNVSomaticPanelWorkflow.normal_bams"
+        "CNVGermlineCohortWorkflow.normal_bams"
     ] = ds.params[
-        "CNVSomaticPanelWorkflow.normal_bams"
+        "CNVGermlineCohortWorkflow.normal_bams"
     ].replace(' ', '').split(',')
     
     # Just add the .crai suffix to the BAMs
