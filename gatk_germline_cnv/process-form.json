@@ -21,8 +21,8 @@
                         "default": "broadinstitute/gatk:latest"
                     },
                     "normal_bams": {
-                        "description": "This list must correspond to bam files. For example, 'Sample1.bam, Sample2.bam'",
-                        "file": "**/preprocessing/recalibrated/**/*.cram",
+                        "description": "This list must correspond to bam files. For example, 'data/processing/.../Sample1.bam'",
+                        "file": "**/preprocessing/recalibrated/su001_normal_pre/*.cram",
                         "multiple": true,
                         "pathType": "dataset",
                         "title": "Input BAM files",
