@@ -22,12 +22,9 @@ def setup_inputs(ds: PreprocessDataset):
     assert "CNVGermlineCohortWorkflow.normal_bams" in ds.params, msg
 
     # turn comma separated string of bam_files into list
-    ds.params[
-        "CNVGermlineCohortWorkflow.normal_bams"
-    ] = ds.params[
-        "CNVGermlineCohortWorkflow.normal_bams"
-    ]
-
+    
+    ds.params["CNVSomaticPanelWorkflow.normal_bams"] = [ path.strip() for path in ds.params["CNVSomaticPanelWorkflow.normal_bams"].split(',')]
+    
     # Just add the .crai suffix to the BAMs
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bais"
