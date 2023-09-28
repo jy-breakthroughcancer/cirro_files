@@ -26,7 +26,7 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bams"
     ] = ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
-    ].split(',')
+    ]
 
     # Just add the .crai suffix to the BAMs
     ds.params[
