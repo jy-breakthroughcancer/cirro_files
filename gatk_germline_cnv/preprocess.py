@@ -37,7 +37,7 @@ def setup_inputs(ds: PreprocessDataset):
             continue
         ds.logger.info(f"BAM: {bai_fp}")
 
-    """
+    
     # turn comma separated string of bam_files into list
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
@@ -53,7 +53,7 @@ def setup_inputs(ds: PreprocessDataset):
         "CNVGermlineCohortWorkflow.normal_bais",
         "normal_bais"
     ).split(',')]
-    """
+    
     all_inputs = {
                 kw: val
                 for kw, val in ds.params.items()
