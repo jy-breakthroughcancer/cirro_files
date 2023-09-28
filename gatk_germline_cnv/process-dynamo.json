@@ -1,6 +1,6 @@
 {
     "id": "process-gatk-cnv_germline_cohort-4_4_0_0_jen1",
-    "name": "Test Germline Variant Discovery (GATK) CNV Germline Cohort",
+    "name": "Test1 Germline Variant Discovery (GATK) CNV Germline Cohort",
     "parentProcessIds": ["process-nf-core-sarek-align-3-2", "ingest_unaligned_bam"],
     "childProcessIds": [],
     "code": {
