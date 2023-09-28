@@ -14,6 +14,9 @@ def mark_filetype(fp: str) -> str:
 
 def setup_inputs(ds: PreprocessDataset):
 
+    ds.logger.info("Parameters provided by the user:")
+    ds.logger.info(json.dumps(ds.params, indent=4))
+
     # Raise an error if the parameter has NOT been supplied by the user
     msg = "User did not specify CNVGermlineCohortWorkflow.normal_bams"
     assert "CNVGermlineCohortWorkflow.normal_bams" in ds.params, msg
@@ -32,6 +35,10 @@ def setup_inputs(ds: PreprocessDataset):
         bam + ".crai"
         for bam in ds.params["CNVGermlineCohortWorkflow.normal_bams"]
     ]
+
+    # Log all of the inputs from the user
+    ds.logger.info("Parameters after parsing the CRAM and CRAI:")
+    ds.logger.info(json.dumps(ds.params, indent=4))
     
     all_inputs = {
                 kw: val
