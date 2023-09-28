@@ -15,7 +15,7 @@ def mark_filetype(fp: str) -> str:
 def setup_inputs(ds: PreprocessDataset):
     ds.logger.info("List input files")
     ds.logger.info(ds.files)
-
+    """
     for sample, files in ds.files.groupby("sample"):
 
         file_dict = {
@@ -37,7 +37,7 @@ def setup_inputs(ds: PreprocessDataset):
             continue
         ds.logger.info(f"BAM: {bai_fp}")
 
-    
+    """
     # turn comma separated string of bam_files into list
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bams"
