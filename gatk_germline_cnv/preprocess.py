@@ -24,9 +24,10 @@ def setup_inputs(ds: PreprocessDataset):
     # turn comma separated string of bam_files into list
 
     ds.params["CNVGermlineCohortWorkflow.normal_bams"] = [bam_file.replace(" ", "").split(',')[0] for bam_file in ds.params["CNVGermlineCohortWorkflow.normal_bams"]]
-    ds.logger.info("BAM files1:")
+    
+    ds.logger.info("BAM files0:")
     ds.logger.info(json.dumps(ds.params, indent=4))
-    ds.logger.info("BAM files2:")
+    ds.logger.info("BAM files1:")
     ds.logger.info(ds.params["CNVGermlineCohortWorkflow.normal_bams"])
    
     # Just add the .crai suffix to the BAMs
