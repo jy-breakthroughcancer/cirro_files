@@ -33,7 +33,7 @@ def setup_inputs(ds: PreprocessDataset):
     ds.params[
         "CNVGermlineCohortWorkflow.normal_bais"
     ] = [
-        bam + ".crai"
+        bam[0] + ".crai"
         for bam in ds.params["CNVGermlineCohortWorkflow.normal_bams"]
     ]
 
