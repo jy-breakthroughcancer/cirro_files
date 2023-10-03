@@ -13,7 +13,7 @@
                         "description": "priors for the contig ploidy",
                         "title": "contig_ploidy_priors",
                         "pathType": "references",
-                        "file": "**/ploidy_prior_lists/**/ploidy_priors.txt",
+                        "file": "**/ploidy_prior_lists/su001_normal_*/ploidy_priors.txt",
                         "type": "string"
                     },
                     "gatk_docker": {
